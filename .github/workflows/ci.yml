@@ -20,6 +20,9 @@ jobs:
       - name: Lint (ruff)
         run: uv run ruff check src tests
 
+      - name: Formatação (ruff format)
+        run: uv run ruff format --check src tests
+
       # Os testes usam fixtures sintéticas no formato do INEP —
       # não dependem dos microdados reais (2,1 GB, fora do repositório)
       - name: Testes (pytest)
