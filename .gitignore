@@ -1,0 +1,32 @@
+# Documentos internos — NUNCA versionar
+plano-portfolio-data-science.md
+
+# Skills de agente — uso local, não fazem parte do projeto
+.agents/
+.claude/
+.duckdb-skills/
+skills-lock.json
+
+# Dados brutos (grandes demais para o git; ver README para download no INEP).
+# Os agregados de data/processed/ (~2 MB) SÃO versionados para permitir
+# reproduzir os notebooks sem baixar os microdados.
+data/raw/
+*.duckdb
+*.duckdb.wal
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# SO / editor
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
