@@ -3,6 +3,7 @@ name = "enem-2024-eda"
 version = "0.1.0"
 description = "Análise exploratória dos microdados do ENEM 2024 (INEP) com DuckDB e pandas"
 readme = "README.md"
+license = "MIT"
 requires-python = ">=3.12"
 authors = [{ name = "João Biazzin" }]
 dependencies = [
@@ -16,6 +17,9 @@ dependencies = [
     "scipy>=1.18.0",
     "statsmodels>=0.14.6",
 ]
+
+[project.urls]
+Repository = "https://github.com/Joao-Biazzin/Analise-dos-microdados-ENEM-2024"
 
 [dependency-groups]
 dev = [
