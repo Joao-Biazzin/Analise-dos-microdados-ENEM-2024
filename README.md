@@ -21,7 +21,7 @@ abrir os dados, quatro notebooks narrativos e uma restrição real de LGPD trata
 | # | Pergunta | Resposta curta |
 |---|----------|----------------|
 | 1 | Quem presta o ENEM? | Jovem (44% com 17–18 anos), mulher (61%), preto/pardo (55%) e de baixa renda (42% das famílias vivem com até 1 salário mínimo) |
-| 2 | Qual o tamanho da abstenção? | 26,8% no dia 1 e 30,6% no dia 2; no RS (enchentes de 2024) chegou a **43,7%** |
+| 2 | Qual o tamanho da abstenção? | 26,8% no dia 1 e 30,6% no dia 2; no RS (enchentes de 2024) chegou a **43,7%**. E ela **não acompanha a renda municipal** (r ≈ −0,1): a desigualdade aparece na nota, não no comparecimento |
 | 3 | Quão grande é o fosso público × privado? | De 63 pontos (Linguagens) a **192 pontos (Redação)**; a mediana da privada supera o 3º quartil da pública em todas as áreas |
 | 4 | Como o desempenho se distribui no mapa? | O mapa das notas repete o mapa da renda: Sul/Sudeste no topo, interior do Norte/Nordeste na base |
 | 5 | O que a redação revela? | 5,2% valem zero (principal motivo: folha em branco); só **12 notas 1000**; a competência que mais derruba é a **C5 (proposta de intervenção)** |
