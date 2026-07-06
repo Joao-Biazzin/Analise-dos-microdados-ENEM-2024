@@ -82,9 +82,7 @@ def con(tmp_path):
         participantes=_write_csv(
             tmp_path / "PARTICIPANTES_2024.csv", PARTICIPANTES_HEADER, PARTICIPANTES_ROWS
         ),
-        resultados=_write_csv(
-            tmp_path / "RESULTADOS_2024.csv", RESULTADOS_HEADER, RESULTADOS_ROWS
-        ),
+        resultados=_write_csv(tmp_path / "RESULTADOS_2024.csv", RESULTADOS_HEADER, RESULTADOS_ROWS),
         itens=_write_csv(tmp_path / "ITENS_PROVA_2024.csv", ITENS_HEADER, ITENS_ROWS),
     )
     yield connection

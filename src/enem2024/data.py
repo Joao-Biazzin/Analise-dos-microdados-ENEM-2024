@@ -45,8 +45,7 @@ def create_views(
     ]:
         csv_path = str(path).replace("'", "''")
         con.execute(
-            f"CREATE OR REPLACE VIEW {name} AS "
-            f"SELECT * FROM read_csv('{csv_path}', {CSV_OPTS})"
+            f"CREATE OR REPLACE VIEW {name} AS SELECT * FROM read_csv('{csv_path}', {CSV_OPTS})"
         )
 
 

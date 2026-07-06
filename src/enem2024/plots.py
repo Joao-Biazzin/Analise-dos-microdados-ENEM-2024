@@ -38,8 +38,19 @@ BLUE = CATEGORICAL[0]
 RED = CATEGORICAL[5]
 
 _SEQ_BLUES = [
-    "#cde2fb", "#b7d3f6", "#9ec5f4", "#86b6ef", "#6da7ec", "#5598e7",
-    "#3987e5", "#2a78d6", "#256abf", "#1c5cab", "#184f95", "#104281", "#0d366b",
+    "#cde2fb",
+    "#b7d3f6",
+    "#9ec5f4",
+    "#86b6ef",
+    "#6da7ec",
+    "#5598e7",
+    "#3987e5",
+    "#2a78d6",
+    "#256abf",
+    "#1c5cab",
+    "#184f95",
+    "#104281",
+    "#0d366b",
 ]
 #: Sequencial (magnitude): um matiz, claro→escuro — mapas coropléticos, heatmaps
 CMAP_SEQ = LinearSegmentedColormap.from_list("enem_blues", _SEQ_BLUES)
@@ -52,37 +63,39 @@ CMAP_DIV = LinearSegmentedColormap.from_list(
 
 def setup() -> None:
     """Aplica o estilo padrão do projeto ao matplotlib/seaborn."""
-    mpl.rcParams.update({
-        "figure.facecolor": SURFACE,
-        "figure.figsize": (9, 5),
-        "figure.dpi": 110,
-        "savefig.facecolor": SURFACE,
-        "axes.facecolor": SURFACE,
-        "axes.edgecolor": BASELINE,
-        "axes.labelcolor": INK_SECONDARY,
-        "axes.titlecolor": INK,
-        "axes.titlesize": 13,
-        "axes.titleweight": "semibold",
-        "axes.titlelocation": "left",
-        "axes.spines.top": False,
-        "axes.spines.right": False,
-        "axes.grid": True,
-        "axes.axisbelow": True,
-        "grid.color": GRID,
-        "grid.linewidth": 1.0,
-        "xtick.color": MUTED,
-        "ytick.color": MUTED,
-        "xtick.labelsize": 9.5,
-        "ytick.labelsize": 9.5,
-        "text.color": INK,
-        "font.family": ["Segoe UI", "DejaVu Sans", "sans-serif"],
-        "axes.prop_cycle": mpl.cycler(color=CATEGORICAL),
-        "lines.linewidth": 2.0,
-        "lines.solid_joinstyle": "round",
-        "lines.solid_capstyle": "round",
-        "legend.frameon": False,
-        "legend.fontsize": 9.5,
-    })
+    mpl.rcParams.update(
+        {
+            "figure.facecolor": SURFACE,
+            "figure.figsize": (9, 5),
+            "figure.dpi": 110,
+            "savefig.facecolor": SURFACE,
+            "axes.facecolor": SURFACE,
+            "axes.edgecolor": BASELINE,
+            "axes.labelcolor": INK_SECONDARY,
+            "axes.titlecolor": INK,
+            "axes.titlesize": 13,
+            "axes.titleweight": "semibold",
+            "axes.titlelocation": "left",
+            "axes.spines.top": False,
+            "axes.spines.right": False,
+            "axes.grid": True,
+            "axes.axisbelow": True,
+            "grid.color": GRID,
+            "grid.linewidth": 1.0,
+            "xtick.color": MUTED,
+            "ytick.color": MUTED,
+            "xtick.labelsize": 9.5,
+            "ytick.labelsize": 9.5,
+            "text.color": INK,
+            "font.family": ["Segoe UI", "DejaVu Sans", "sans-serif"],
+            "axes.prop_cycle": mpl.cycler(color=CATEGORICAL),
+            "lines.linewidth": 2.0,
+            "lines.solid_joinstyle": "round",
+            "lines.solid_capstyle": "round",
+            "legend.frameon": False,
+            "legend.fontsize": 9.5,
+        }
+    )
 
 
 def save_fig(fig: plt.Figure, name: str, figures_dir: Path | None = None) -> Path:

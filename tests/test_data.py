@@ -13,16 +13,13 @@ def test_views_parse_latin1_separator_and_na(con):
 
     # acentos do Latin-1 preservados
     cidades = {
-        r[0]
-        for r in con.sql("SELECT DISTINCT NO_MUNICIPIO_PROVA FROM participantes").fetchall()
+        r[0] for r in con.sql("SELECT DISTINCT NO_MUNICIPIO_PROVA FROM participantes").fetchall()
     }
     assert "São Paulo" in cidades
     assert "Niterói" in cidades
 
     # string vazia vira NULL (TP_ENSINO vazio em 3 participantes)
-    n_null = con.sql(
-        "SELECT count() FROM participantes WHERE TP_ENSINO IS NULL"
-    ).fetchone()[0]
+    n_null = con.sql("SELECT count() FROM participantes WHERE TP_ENSINO IS NULL").fetchone()[0]
     assert n_null == 3
 
 
@@ -91,7 +88,9 @@ def test_media_geral_conta_apenas_quem_fez_tudo(con, tmp_path):
     # São Paulo: 2 completos; média geral = média das somas/5
     sp = df.loc["São Paulo"]
     assert sp["n_completos"] == 2
-    esperado = ((650.5 + 700.0 + 600.0 + 750.5 + 960) / 5 + (450.5 + 500.0 + 480.0 + 400.5 + 520) / 5) / 2
+    esperado = (
+        (650.5 + 700.0 + 600.0 + 750.5 + 960) / 5 + (450.5 + 500.0 + 480.0 + 400.5 + 520) / 5
+    ) / 2
     assert sp["media_geral"] == pytest.approx(esperado)
 
 
@@ -108,9 +107,7 @@ def test_presenca_em_formato_longo(con, tmp_path):
 
 
 def test_redacao_status_e_competencias(con, tmp_path):
-    build_aggregates(
-        con, out_dir=tmp_path, names=["redacao_status", "redacao_competencias"]
-    )
+    build_aggregates(con, out_dir=tmp_path, names=["redacao_status", "redacao_competencias"])
     status = load("redacao_status", processed_dir=tmp_path).set_index("status")["n"]
     assert status.to_dict() == {1: 3, 4: 1}
 

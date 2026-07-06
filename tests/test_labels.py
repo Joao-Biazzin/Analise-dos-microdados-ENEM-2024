@@ -16,7 +16,11 @@ def test_dominios_completos():
 def test_regioes_cobrem_27_ufs():
     assert len(labels.REGIAO_POR_UF) == 27
     assert set(labels.REGIAO_POR_UF.values()) == {
-        "Norte", "Nordeste", "Centro-Oeste", "Sudeste", "Sul",
+        "Norte",
+        "Nordeste",
+        "Centro-Oeste",
+        "Sudeste",
+        "Sul",
     }
 
 
