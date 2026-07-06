@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Instalar dependências
+        run: uv sync
+
+      - name: Lint (ruff)
+        run: uv run ruff check src tests
+
+      # Os testes usam fixtures sintéticas no formato do INEP —
+      # não dependem dos microdados reais (2,1 GB, fora do repositório)
+      - name: Testes (pytest)
+        run: uv run pytest -q
+
+      # Os agregados parquet versionados em data/processed permitem executar
+      # os notebooks de ponta a ponta sem os dados brutos (nb04 fica de fora:
+      # depende de download da API do IBGE)
+      - name: Executa notebooks 01-03
+        run: |
+          uv run jupyter nbconvert --to notebook --execute --stdout notebooks/01-perfil-participantes.ipynb > /dev/null
+          uv run jupyter nbconvert --to notebook --execute --stdout notebooks/02-desempenho-e-abstencao.ipynb > /dev/null
+          uv run jupyter nbconvert --to notebook --execute --stdout notebooks/03-redacao.ipynb > /dev/null
