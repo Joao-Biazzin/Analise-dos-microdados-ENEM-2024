@@ -1,0 +1,7 @@
+# Normaliza fins de linha: LF no repositório, independente do SO
+* text=auto
+
+# Binários — nunca tocar
+*.png binary
+*.parquet binary
+*.ipynb text
